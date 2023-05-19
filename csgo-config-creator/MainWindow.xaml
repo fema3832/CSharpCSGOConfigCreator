@@ -1,0 +1,229 @@
+﻿<Window x:Class="csgo_config_creator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="MainWindow"
+        Height="Auto"
+        Width="1000">
+    <Grid ShowGridLines="True">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        
+        <!-- =============== SLIDER SECTION - CROSSHAIR - FIRST ROW =============== -->
+        <!-- <Image Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" Height="300" Width="300" Source="D:\Projects\c#\csgo-config-creator\csgo-config-creator\crosshair.png" HorizontalAlignment="Center" VerticalAlignment="Center"></Image> -->
+        <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="7" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30">
+            <TextBlock TextDecorations="underline">= CROSSHAIR =</TextBlock>
+        </Label>
+        <DockPanel Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" Margin="10">
+            <Label DockPanel.Dock="Top" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 0 0 15">
+                    <TextBlock TextDecorations="underline">Style</TextBlock>
+                </Label>
+                <Label DockPanel.Dock="Bottom" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <TextBlock Name="crosshairStyleLabel">Default</TextBlock>
+                </Label>
+                <TextBox Text="{Binding ElementName=crosshairStyle, Path=Value, UpdateSourceTrigger=PropertyChanged}" DockPanel.Dock="Right" TextAlignment="Right" Width="40" />
+                <Slider ValueChanged="initalizeComponents" TickFrequency="1" Maximum="5" TickPlacement="BottomRight" IsSnapToTickEnabled="True" Name="crosshairStyle" />
+        </DockPanel>
+        <DockPanel Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Margin="10">
+            <Label DockPanel.Dock="Top" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 0 0 15">
+                <TextBlock TextDecorations="underline">Size</TextBlock>
+            </Label>
+            <TextBox Text="{Binding ElementName=crosshairSize, Path=Value, UpdateSourceTrigger=PropertyChanged}" DockPanel.Dock="Right" TextAlignment="Right" Width="40" />
+            <Slider ValueChanged="initalizeComponents" Maximum="255" TickPlacement="BottomRight" IsSnapToTickEnabled="True" Name="crosshairSize" />
+        </DockPanel>
+        <DockPanel Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" Margin="10">
+            <Label DockPanel.Dock="Top" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 0 0 10">
+                <TextBlock TextDecorations="underline">Gap</TextBlock>
+            </Label>
+            <TextBox Text="{Binding ElementName=crosshairGap, Path=Value, UpdateSourceTrigger=PropertyChanged}" DockPanel.Dock="Right" TextAlignment="Right" Width="40"/>
+            <Slider ValueChanged="initalizeComponents" Maximum="255" TickPlacement="BottomRight" IsSnapToTickEnabled="True" Name="crosshairGap" />
+        </DockPanel>
+        <DockPanel Grid.Row="1" Grid.Column="3" VerticalAlignment="Center" Margin="10">
+            <Label DockPanel.Dock="Top" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 0 0 15">
+                <TextBlock TextDecorations="underline">Thickness</TextBlock>
+            </Label>
+            <TextBox Text="{Binding ElementName=crosshairThickness, Path=Value, UpdateSourceTrigger=PropertyChanged}" DockPanel.Dock="Right" TextAlignment="Right" Width="40" />
+            <Slider ValueChanged="initalizeComponents" Maximum="255" TickPlacement="BottomRight" IsSnapToTickEnabled="True" Name="crosshairThickness" />
+        </DockPanel>
+        <DockPanel Grid.Row="1" Grid.Column="4" VerticalAlignment="Center" Margin="10">
+            <Label DockPanel.Dock="Top" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 0 0 15">
+                <TextBlock TextDecorations="underline">Alpha</TextBlock>
+            </Label>
+            <TextBox Text="{Binding ElementName=crosshairAlpha, Path=Value, UpdateSourceTrigger=PropertyChanged}" DockPanel.Dock="Right" TextAlignment="Right" Width="40" />
+            <Slider ValueChanged="initalizeComponents" Maximum="255" TickPlacement="BottomRight" IsSnapToTickEnabled="True" Name="crosshairAlpha" />
+        </DockPanel>
+        <DockPanel Grid.Row="1" Grid.Column="5" VerticalAlignment="Center" Margin="10">
+            <Label DockPanel.Dock="Top" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 0 0 15">
+                <TextBlock TextDecorations="underline">Outline Thickness</TextBlock>
+            </Label>
+            <TextBox Text="{Binding ElementName=crosshairOutlineThickness, Path=Value, UpdateSourceTrigger=PropertyChanged}" DockPanel.Dock="Right" TextAlignment="Right" Width="40" />
+            <Slider ValueChanged="initalizeComponents" Maximum="255" TickPlacement="BottomRight" IsSnapToTickEnabled="True" Name="crosshairOutlineThickness" />
+        </DockPanel>
+        <DockPanel Grid.Row="1" Grid.Column="6" VerticalAlignment="Center" Margin="10">
+            <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+                <StackPanel>
+                    <Label DockPanel.Dock="Top" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 0 0 15">
+                        <TextBlock  TextDecorations="underline">Enable</TextBlock>
+                    </Label>
+                    <CheckBox Checked="initalizeComponents" DockPanel.Dock="Bottom" Margin="0 0 0 5" Name="enableCrosshairDot" FontSize="10">Dot</CheckBox>
+                    <CheckBox Checked="initalizeComponents" DockPanel.Dock="Bottom" Margin="0 0 0 5" Name="enableCrosshairTShape" FontSize="10">T shape</CheckBox>
+                    <CheckBox Checked="initalizeComponents" DockPanel.Dock="Bottom" Margin="0 0 0 5" Name="enableCrosshairWeaponValue" FontSize="10">Weapon Value</CheckBox>
+                    <CheckBox Checked="initalizeComponents" DockPanel.Dock="Bottom" Margin="0 0 0 5" Name="enableCrosshairID" FontSize="10">Target ID</CheckBox>
+                </StackPanel>
+            </ScrollViewer>
+        </DockPanel>
+        
+        <!-- =============== SLIDER SECTION - VIEWMODEL - THIRD ROW =============== -->
+        <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="7" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30">
+            <TextBlock TextDecorations="underline">= VIEWMODEL =</TextBlock>
+        </Label>
+        <DockPanel Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" Margin="10">
+            <Label DockPanel.Dock="Top" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 0 0 15">
+                <TextBlock TextDecorations="underline">Fov</TextBlock>
+            </Label>
+            <TextBox Text="{Binding ElementName=viewmodelFov, Path=Value, UpdateSourceTrigger=PropertyChanged}" DockPanel.Dock="Right" TextAlignment="Right" Width="40" />
+            <Slider ValueChanged="initalizeComponents" ToolTip="Default Value: 60" TickFrequency="1" Minimum="54" Maximum="68" TickPlacement="BottomRight" IsSnapToTickEnabled="True" Name="viewmodelFov" />
+        </DockPanel>
+        <DockPanel Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" Margin="10">
+            <Label DockPanel.Dock="Top" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 0 0 10">
+                <TextBlock TextDecorations="underline">X Offset</TextBlock>
+            </Label>
+            <TextBox Text="{Binding ElementName=viewmodelOffsetX, Path=Value, UpdateSourceTrigger=PropertyChanged}" DockPanel.Dock="Right" TextAlignment="Right" Width="40"/>
+            <Slider ValueChanged="initalizeComponents" TickFrequency="1" Minimum="-2.5" Maximum="2.5" TickPlacement="BottomRight" IsSnapToTickEnabled="True" Name="viewmodelOffsetX" />
+        </DockPanel>
+        <DockPanel Grid.Row="3" Grid.Column="2" VerticalAlignment="Center" Margin="10">
+            <Label DockPanel.Dock="Top" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 0 0 15">
+                <TextBlock TextDecorations="underline">Y Offset</TextBlock>
+            </Label>
+            <TextBox Text="{Binding ElementName=viewmodelOffsetY, Path=Value, UpdateSourceTrigger=PropertyChanged}" DockPanel.Dock="Right" TextAlignment="Right" Width="40" />
+            <Slider ValueChanged="initalizeComponents" TickFrequency="1" Minimum="-2" Maximum="2" TickPlacement="BottomRight" IsSnapToTickEnabled="True" Name="viewmodelOffsetY" />
+        </DockPanel>
+        <DockPanel Grid.Row="3" Grid.Column="3" VerticalAlignment="Center" Margin="10">
+            <Label DockPanel.Dock="Top" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 0 0 15">
+                <TextBlock TextDecorations="underline">Z Offset</TextBlock>
+            </Label>
+            <TextBox Text="{Binding ElementName=viewmodelOffsetZ, Path=Value, UpdateSourceTrigger=PropertyChanged}" DockPanel.Dock="Right" TextAlignment="Right" Width="40" />
+            <Slider ValueChanged="initalizeComponents" TickFrequency="1" Minimum="-2" Maximum="2" TickPlacement="BottomRight" IsSnapToTickEnabled="True" Name="viewmodelOffsetZ" />
+        </DockPanel>
+        <DockPanel Grid.Row="3" Grid.Column="4" VerticalAlignment="Center" Margin="10">
+            <Label DockPanel.Dock="Top" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 0 0 15">
+                <TextBlock TextDecorations="underline">Bob Amt Lat</TextBlock>
+            </Label>
+            
+            <StackPanel>
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBox Text="{Binding ElementName=viewmodelBobAmtLat, Path=Value, UpdateSourceTrigger=PropertyChanged}" DockPanel.Dock="Right" TextAlignment="Right" Width="40" />
+                        <TextBox Text="{Binding ElementName=viewmodelBobLowerAmt, Path=Value, UpdateSourceTrigger=PropertyChanged}" DockPanel.Dock="Right" TextAlignment="Right" Width="40" />
+                        <TextBox Text="{Binding ElementName=viewmodelBobAmtVert, Path=Value, UpdateSourceTrigger=PropertyChanged}" DockPanel.Dock="Right" TextAlignment="Right" Width="40" />
+                    </StackPanel>
+                    <Slider ValueChanged="initalizeComponents" DockPanel.Dock="Bottom" ToolTip="Default Value: 0.4" TickFrequency="0.1" Minimum="0.1" Maximum="2" TickPlacement="BottomRight" IsSnapToTickEnabled="True" Name="viewmodelBobAmtLat" />
+                    <Slider ValueChanged="initalizeComponents" DockPanel.Dock="Bottom" ToolTip="Default Value: 21" TickFrequency="1" Minimum="5" Maximum="30" TickPlacement="BottomRight" IsSnapToTickEnabled="True" Name="viewmodelBobLowerAmt" />
+                    <Slider ValueChanged="initalizeComponents" DockPanel.Dock="Bottom" ToolTip="Default Value: 0.25" TickFrequency="0.1" Minimum="0.1" Maximum="2" TickPlacement="BottomRight" IsSnapToTickEnabled="True" Name="viewmodelBobAmtVert" />
+                </StackPanel>
+            </StackPanel>
+        </DockPanel>
+        
+        <DockPanel Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" Margin="10">
+            <Label DockPanel.Dock="Top" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 0 0 15">
+                <TextBlock TextDecorations="underline">Shift Left</TextBlock>
+            </Label>
+            <TextBox Text="{Binding ElementName=viewmodelShiftLeftAmt, Path=Value, UpdateSourceTrigger=PropertyChanged}" DockPanel.Dock="Right" TextAlignment="Right" Width="40" />
+            <Slider ValueChanged="initalizeComponents" ToolTip="Default Value: 1.5" TickFrequency="0.1" Minimum="0.5" Maximum="2" TickPlacement="BottomRight" IsSnapToTickEnabled="True" Name="viewmodelShiftLeftAmt" />
+        </DockPanel>
+        <DockPanel Grid.Row="4" Grid.Column="2" VerticalAlignment="Center" Margin="10">
+            <Label DockPanel.Dock="Top" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 0 0 15">
+                <TextBlock TextDecorations="underline">Shift Right</TextBlock>
+            </Label>
+            <TextBox Text="{Binding ElementName=viewmodelShiftRightAmt, Path=Value, UpdateSourceTrigger=PropertyChanged}" DockPanel.Dock="Right" TextAlignment="Right" Width="40" />
+            <Slider ValueChanged="initalizeComponents" ToolTip="Default Value: 0.75" TickFrequency="0.1" Minimum="0.25" Maximum="2" TickPlacement="BottomRight" IsSnapToTickEnabled="True" Name="viewmodelShiftRightAmt" />
+        </DockPanel>
+        <DockPanel Grid.Row="4" Grid.Column="3" VerticalAlignment="Center" Margin="10">
+            <Label DockPanel.Dock="Top" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 0 0 15">
+                <TextBlock TextDecorations="underline">Recoil</TextBlock>
+            </Label>
+            <TextBox Text="{Binding ElementName=viewmodelRecoil, Path=Value, UpdateSourceTrigger=PropertyChanged}" DockPanel.Dock="Right" TextAlignment="Right" Width="40" />
+            <Slider ValueChanged="initalizeComponents" ToolTip="Default Value: 0.5" TickFrequency="0.1" Minimum="0" Maximum="1" TickPlacement="BottomRight" IsSnapToTickEnabled="True" Name="viewmodelRecoil" />
+        </DockPanel>
+        <DockPanel Grid.Row="4" Grid.Column="4" VerticalAlignment="Center" Margin="10">
+            <Label DockPanel.Dock="Top" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 0 0 15">
+                <TextBlock TextDecorations="underline">Righthand</TextBlock>
+            </Label>
+            <CheckBox ToolTip="Default Value: 0" Name="viewmodelEnableRighthand">Righthand</CheckBox>
+        </DockPanel>
+        
+        <!-- =============== SLIDER SECTION - HUD - FOURTH ROW =============== -->
+        <Label Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="7" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30">
+            <TextBlock TextDecorations="underline">= HUD =</TextBlock>
+        </Label>
+        <DockPanel Grid.Row="6" Grid.Column="1" VerticalAlignment="Center" Margin="10" Width="Auto">
+            <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+                <StackPanel>
+                    <Label DockPanel.Dock="Top" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 0 0 15">
+                        <TextBlock  TextDecorations="underline">Enable</TextBlock>
+                    </Label>
+                    <CheckBox Checked="initalizeComponents" DockPanel.Dock="Bottom" Margin="0 0 0 5" Name="hudEnableNetGraph" FontSize="10">Net Graph</CheckBox>
+                    <CheckBox Checked="initalizeComponents" DockPanel.Dock="Bottom" Margin="0 0 0 5" Name="hudEnableSmallNetGraph" FontSize="10">Small Net Graph</CheckBox>
+                    <CheckBox Checked="initalizeComponents" DockPanel.Dock="Bottom" Margin="0 0 0 5" Name="hudEnableShowFps" FontSize="10">Show FPS</CheckBox>
+                </StackPanel>
+            </ScrollViewer>
+        </DockPanel>
+        <DockPanel Grid.Row="6" Grid.Column="2" VerticalAlignment="Center" Margin="10">
+            <Label DockPanel.Dock="Top" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 0 0 10">
+                <TextBlock TextDecorations="underline">Color</TextBlock>
+            </Label>
+            <TextBox Text="{Binding ElementName=hudColor, Path=Value, UpdateSourceTrigger=PropertyChanged}" DockPanel.Dock="Right" TextAlignment="Right" Width="40"/>
+            <Slider ValueChanged="initalizeComponents" TickFrequency="1" Maximum="10" TickPlacement="BottomRight" IsSnapToTickEnabled="True" Name="hudColor" />
+        </DockPanel>
+        <DockPanel Grid.Row="6" Grid.Column="3" VerticalAlignment="Center" Margin="10">
+            <Label DockPanel.Dock="Top" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 0 0 10">
+                <TextBlock TextDecorations="underline">Hud Scale</TextBlock>
+            </Label>
+            <TextBox Text="{Binding ElementName=hudScale, Path=Value, UpdateSourceTrigger=PropertyChanged}" DockPanel.Dock="Right" TextAlignment="Right" Width="40"/>
+            <Slider ValueChanged="initalizeComponents" TickFrequency="0.05" Minimum="0.5" Maximum="0.95" TickPlacement="BottomRight" IsSnapToTickEnabled="True" Name="hudScale" />
+        </DockPanel>
+        <DockPanel Grid.Row="6" Grid.Column="4" VerticalAlignment="Center" Margin="10">
+            <Label DockPanel.Dock="Top" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 0 0 15">
+                <TextBlock TextDecorations="underline">Background Alpha</TextBlock>
+            </Label>
+            <TextBox Text="{Binding ElementName=hudBackgroundAlpha, Path=Value, UpdateSourceTrigger=PropertyChanged}" DockPanel.Dock="Right" TextAlignment="Right" Width="40" />
+            <Slider ValueChanged="initalizeComponents" TickFrequency="0.1" Maximum="1" TickPlacement="BottomRight" IsSnapToTickEnabled="True" Name="hudBackgroundAlpha" />
+        </DockPanel>
+        <DockPanel Grid.Row="6" Grid.Column="5" VerticalAlignment="Center" Margin="10">
+            <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+                <StackPanel>
+                    <Label DockPanel.Dock="Top" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 0 0 15">
+                        <TextBlock  TextDecorations="underline">Enable Miscs</TextBlock>
+                    </Label>
+                    <CheckBox Checked="initalizeComponents" DockPanel.Dock="Bottom" Margin="0 0 0 5" Name="hudEnableTeamEquipment" FontSize="10">Team Equipment</CheckBox>
+                    <CheckBox Checked="initalizeComponents" DockPanel.Dock="Bottom" Margin="0 0 0 5" Name="hudEnablePlayercount" FontSize="10">Show Only Playercount</CheckBox>
+                    <CheckBox Checked="initalizeComponents" DockPanel.Dock="Bottom" Margin="0 0 0 5" Name="hudEnablePlayercountToBottom" FontSize="10">Playercount to bottom</CheckBox>
+                    <CheckBox Checked="initalizeComponents" DockPanel.Dock="Bottom" Margin="0 0 0 5" Name="hudEnableHealthAndAmmoOnlyNumber" FontSize="10">Health and Ammo Only Number</CheckBox>
+                </StackPanel>
+            </ScrollViewer>
+        </DockPanel>
+        
+        <!-- =============== SAVE, LOAD - LAST ROW =============== -->
+        <Button Grid.Row="7" Grid.Column="4" DockPanel.Dock="Top" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Name="saveButton" Click="SaveButton_OnClick">Save</Button>
+        <Button Grid.Row="7" Grid.Column="5" DockPanel.Dock="Top" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Name="loadButton">Load</Button>
+    </Grid>
+</Window>
